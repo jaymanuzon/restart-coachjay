@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<link rel="canonical" href="https://restart.coachjay.de/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"Restart — Klarheit entsteht aus dem Schritt",
+"inLanguage":"de","url":"https://restart.coachjay.de/",
+"description":"Sieben Schritte für den Teil der Veränderung, den niemand sieht.",
+"isPartOf":{"@type":"WebSite","name":"coachjay","url":"https://coachjay.de/"},
+"provider":{"@type":"Person","name":"Jay Manuzon","jobTitle":"Executive- und Team-Coach","url":"https://coachjay.de/"},
+"citation":[
+ {"@type":"ScholarlyArticle","name":"The mediating role of self-efficacy in the development of entrepreneurial intentions","author":"Zhao, H.; Seibert, S. E.; Hills, G. E.","datePublished":"2005","isPartOf":{"@type":"Periodical","name":"Journal of Applied Psychology"}},
+ {"@type":"ScholarlyArticle","name":"Provisional selves: Experimenting with image and identity in professional adaptation","author":"Ibarra, H.","datePublished":"1999","isPartOf":{"@type":"Periodical","name":"Administrative Science Quarterly"}}
+]}
+</script>
+<title>Restart — Klarheit entsteht aus dem Schritt</title>
+<meta name="description" content="Sieben Schritte für den Teil der Veränderung, den niemand sieht. Diese Seite wird schärfer, während du sie gehst.">
+<style>
+/* ═══════════════════════════════════════════════════════════════════
+   KONZEPT „Der Weg schärft“ · Restart · Fassung 2 nach Jays Regie
+   ───────────────────────────────────────────────────────────────────
+   Gebaut nach Jays Regie vom 11.09. Zwei Umkehrungen gegenüber
+   Fassung 1: Grundstimmung HELL mit dunklen Kapiteln (war durchgehend
+   dunkel), und deutlich luftiger (Dichte 2 statt 3).
+   Die These der Seite — Klarheit entsteht aus dem Schritt — wird nicht
+   behauptet, sondern ausgeführt: die Seite beginnt unaufgelöst und
+   schärft sich, während man sie geht und antwortet. Eine Variable:
+   --klarheit (0 → 1). Ohne JavaScript vollständig lesbar und scharf.
+   ═══════════════════════════════════════════════════════════════════ */
+
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:300 700;font-display:swap;
+  src:url('fonts/cormorant-latin.woff2') format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:300 700;font-display:swap;
+  src:url('fonts/cormorant-latin-ext.woff2') format('woff2');unicode-range:U+0100-024F,U+1E00-1EFF,U+2020,U+20A0-20AB}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:300 700;font-display:swap;
+  src:url('fonts/cormorant-italic-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+2000-206F,U+20AC}
+@font-face{font-family:'Hanken Grotesk';font-style:normal;font-weight:300 800;font-display:swap;
+  src:url('fonts/hanken-latin.woff2') format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+2000-206F,U+20AC,U+2122,U+2212}
+@font-face{font-family:'Hanken Grotesk';font-style:normal;font-weight:300 800;font-display:swap;
+  src:url('fonts/hanken-latin-ext.woff2') format('woff2');unicode-range:U+0100-024F,U+1E00-1EFF,U+20A0-20AB}
+
+:root{
+  --klarheit:0;
+  --papier:#f7f3ec; --papier-warm:#fdfaf4; --tinte:#1b2029; --tinte-weich:#4a5364;
+  --nacht:#141924; --nacht-tief:#0d1119;
+  --glut:#b9591f; --ember:#e08a4e; --teal:#1f6f6b; --salbei:#7fa48f;
+  --serif:'Cormorant Garamond',Georgia,'Iowan Old Style',serif;
+  --sans:'Hanken Grotesk',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:ui-monospace,'SF Mono','JetBrains Mono',Menlo,monospace;
+  --s-1:clamp(.76rem,.72rem + .18vw,.86rem);
+  --s0:clamp(1.02rem,.96rem + .32vw,1.2rem);
+  --s1:clamp(1.24rem,1rem + 1vw,1.7rem);
+  --s2:clamp(1.8rem,1.2rem + 2.6vw,3.3rem);
+  --s3:clamp(2.5rem,1.2rem + 5.4vw,5.8rem);
+  --s4:clamp(3rem,.7rem + 9.6vw,10rem);
+  --band:clamp(6rem,13vw,15rem);          /* Dichte 2: grosszuegig */
+  --spur-b:min(1160px,90vw);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--papier);color:var(--tinte);font-family:var(--sans);font-size:var(--s0);
+  line-height:1.68;-webkit-font-smoothing:antialiased;overflow-x:hidden;font-weight:360}
+
+/* ── Bildanteil 2: Farbfelder, kein Motiv ── */
+.feld{position:fixed;inset:-25vh -25vw;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(46vw 40vw at 14% 16%,rgba(185,89,31,.55),transparent 62%),
+    radial-gradient(42vw 48vw at 88% 24%,rgba(31,111,107,.44),transparent 60%),
+    radial-gradient(58vw 42vw at 46% 94%,rgba(127,164,143,.42),transparent 64%);
+  filter:blur(calc(160px - 85px*var(--klarheit))) saturate(calc(.8 + .75*var(--klarheit)));
+  opacity:calc(.42 - .13*var(--klarheit));
+  transform:scale(calc(1.16 - .12*var(--klarheit)));
+  transition:filter 1.2s cubic-bezier(.16,1,.3,1),opacity 1.2s cubic-bezier(.16,1,.3,1),transform 1.5s cubic-bezier(.16,1,.3,1);
+  animation:drift 40s ease-in-out infinite alternate}
+@keyframes drift{to{transform:scale(1.22) translate3d(3%,-2.5%,0) rotate(3.5deg)}}
+.korn{position:fixed;inset:0;z-index:1;pointer-events:none;mix-blend-mode:multiply;
+  opacity:calc(.3 - .22*var(--klarheit));transition:opacity 1.2s ease;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='150' height='150'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3'/></filter><rect width='150' height='150' filter='url(%23n)' opacity='.4'/></svg>")}
+
+/* ── Der bleibende Rahmen ── */
+.rahmen{position:fixed;inset:0 0 auto 0;z-index:40;display:flex;align-items:center;gap:1.3rem;
+  padding:.8rem clamp(1rem,4vw,2.6rem);
+  background:color-mix(in srgb,var(--papier) 80%,transparent);backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(27,32,41,.1)}
+.marke{font-family:var(--mono);font-size:.72rem;letter-spacing:.28em;font-weight:600}
+.rahmen-schaerfe{display:flex;align-items:center;gap:.5rem;margin-left:.9rem;
+  padding:.28rem .7rem .28rem .34rem;border:1px solid rgba(27,32,41,.16);border-radius:2rem}
+.rs-ring{width:15px;height:15px;border-radius:50%;border:1.5px solid rgba(27,32,41,.2);
+  display:grid;place-items:center;flex:0 0 auto}
+.rs-ring i{display:block;width:9px;height:9px;border-radius:50%;background:var(--glut);
+  transform:scale(var(--klarheit));transition:transform .8s cubic-bezier(.16,1,.3,1)}
+.rs-txt{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--tinte-weich);white-space:nowrap}
+.rs-txt b{color:var(--glut);font-weight:600}
+@media(max-width:560px){.rs-txt span{display:none}}
+.rahmen nav{display:flex;gap:1.4rem;margin-left:auto;align-items:center}
+.rahmen nav a{color:var(--tinte);opacity:.7;text-decoration:none;font-size:var(--s-1);transition:opacity .25s}
+.rahmen nav a:hover{opacity:1}
+@media(max-width:820px){.rahmen nav a:not(.knopf-klein){display:none}}
+.rahmen nav a.knopf-klein{border:1px solid var(--glut);border-radius:2rem;padding:.44rem 1.05rem;
+  opacity:1;color:var(--glut);background:transparent;font-family:var(--mono);font-size:.63rem;
+  letter-spacing:.14em;text-transform:uppercase;transition:background .25s,color .25s}
+.rahmen nav a.knopf-klein:hover{background:#9c4a17;color:var(--papier-warm)}
+
+/* ── Kapitelmarke ── */
+.spur{position:fixed;left:clamp(.6rem,1.6vw,1.7rem);top:50%;translate:0 -50%;z-index:30;
+  display:flex;flex-direction:column;gap:.52rem}
+.spur button{all:unset;cursor:pointer;display:flex;align-items:center;gap:.55rem;padding:.1rem 0}
+.spur .tick{width:calc(11px + 24px*var(--an,0));height:2px;background:var(--tinte);
+  opacity:calc(.2 + .6*var(--an,0));transition:width .45s cubic-bezier(.16,1,.3,1),opacity .45s}
+.spur .txt{font-family:var(--mono);font-size:.55rem;letter-spacing:.15em;color:var(--tinte);
+  opacity:calc(.1 + .7*var(--an,0));transition:opacity .45s}
+.spur .beweg{font-family:var(--mono);font-size:.52rem;letter-spacing:.2em;opacity:.35;margin:.75rem 0 .1rem}
+.spur .beweg:first-child{margin-top:0}
+.dunkel-nah .spur .tick{background:var(--papier)}   /* der Strich IST eine Flaeche */
+.dunkel-nah .spur .txt,.dunkel-nah .spur .beweg{color:var(--papier)}  /* die Ziffern sind TEXT — background haette hier graue Kloetze erzeugt, am Bildschirm gefangen 11.09. */
+@media(max-width:900px){.spur{display:none}}
+
+.flaeche{position:relative;z-index:2;width:100%}
+.spurbreit{width:var(--spur-b);margin-inline:auto}
+.js .weich{opacity:calc(.8 + .2*var(--klarheit));transition:opacity .9s cubic-bezier(.16,1,.3,1)}
+/* Unschaerfe-Staerke (Jay 11.09.: „muss wesentlich groesser sein, damit man nicht denkt,
+   das ist ein schlecht gerendertes Bild"). Geloest ueber zwei Stufen statt einer:
+   die RIESIGE Display-Zeile vertraegt viel (die Wortform bleibt erkennbar),
+   Zwischenueberschriften weniger, Fliesstext gar keine. Dazu die Ouvertuere unten,
+   die die Absicht in den ersten Sekunden vorfuehrt. */
+.js .duenn{filter:blur(calc(7px - 7px*var(--klarheit)));transition:filter 1.1s cubic-bezier(.16,1,.3,1)}
+.js h2.duenn,.js .mittel.duenn{filter:blur(calc(3.2px - 3.2px*var(--klarheit)))}
+.js .ouvertuere-laeuft .duenn{transition:filter 1.6s cubic-bezier(.4,0,.2,1)}
+
+/* ── Zwei Stimmen ── */
+.display{font-family:var(--serif);font-size:var(--s4);line-height:.94;font-weight:500;
+  letter-spacing:calc(-.02em + .008em*var(--klarheit));transition:letter-spacing .9s ease}
+.display em{font-style:italic;color:var(--glut)}
+.gross{font-family:var(--serif);font-size:var(--s3);line-height:1.02;font-weight:500;letter-spacing:-.012em}
+.mittel{font-family:var(--serif);font-size:var(--s2);line-height:1.14;font-weight:500}
+.mono{font-family:var(--mono);font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--tinte-weich)}
+.lead{font-size:var(--s1);line-height:1.55;max-width:40ch;color:var(--tinte-weich);font-weight:340}
+
+/* ── Dunkle Kapitel: der Wechsel markiert die Abschnitte ── */
+.dunkel{background:var(--nacht);color:var(--papier)}
+.dunkel .mono{color:#97a0b3}
+.dunkel .lead{color:#d6cfc4}
+.dunkel .gross,.dunkel .mittel{color:var(--papier)}
+.dunkel .display em{color:var(--ember)}
+
+/* ── Ouvertüre ── */
+.ouvertuere{min-height:100svh;display:grid;align-content:center;padding-block:24vh var(--band)}
+.ouvertuere .display{max-width:13ch}
+.knoepfe{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:2.8rem}
+.knopf{display:inline-block;text-decoration:none;font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;
+  text-transform:uppercase;padding:1.05rem 2.2rem;border-radius:2rem;transition:all .3s;border:1px solid}
+.knopf.primaer{background:var(--glut);color:var(--papier-warm);border-color:var(--glut)}
+.knopf.primaer:hover{background:#a34d18;border-color:#a34d18}
+.knopf.sekundaer{color:var(--tinte);border-color:rgba(27,32,41,.28)}
+.knopf.sekundaer:hover{border-color:var(--tinte)}
+.dunkel .knopf.sekundaer{color:var(--papier);border-color:rgba(247,243,236,.32)}
+.erklaerung{margin-top:3rem;font-size:.98rem;line-height:1.6;color:var(--tinte-weich);max-width:52ch}
+.erklaerung strong{color:var(--tinte);font-weight:500}
+.probe{all:unset;cursor:pointer;font-family:var(--mono);font-size:.6rem;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--glut);border-bottom:1px solid rgba(185,89,31,.45);
+  margin-left:.5rem;padding-bottom:1px;transition:border-color .25s}
+.probe:hover,.probe:focus-visible{border-color:var(--glut)}
+
+/* ── Der Einstieg im Hero: hier wird der Titel geschaerft, WAEHREND man ihn sieht.
+   Jay 11.09.: „sonst wird ja der Titel scharf, wenn man unten rumklickt und man sieht
+   nie, dass der Titel schaerfer geworden ist." Der Effekt darf nicht hinter dem
+   Ruecken des Betrachters passieren. ── */
+.hero-einstieg{margin-top:2.4rem;max-width:46rem}
+.hero-einstieg .mono{margin-bottom:.9rem}
+.hero-weiche{display:flex;flex-wrap:wrap;gap:.5rem}
+.hero-weiche button{all:unset;cursor:pointer;border:1px solid rgba(27,32,41,.2);border-radius:2rem;
+  padding:.58rem 1.05rem;font-size:.94rem;line-height:1.35;max-width:30ch;
+  transition:border-color .28s,background .28s,transform .28s cubic-bezier(.16,1,.3,1)}
+.hero-weiche button:hover,.hero-weiche button:focus-visible{
+  border-color:var(--glut);background:rgba(185,89,31,.08);transform:translateY(-2px)}
+.hero-weiche button[aria-pressed=true]{border-color:var(--glut);background:rgba(185,89,31,.15)}
+.hero-weiche .mehr{border-style:dashed;opacity:.7}
+
+/* ── Zahlen 2: wenige, gross, als Objekte ── */
+.zahlen{display:grid;gap:clamp(2.4rem,5vw,4.5rem);grid-template-columns:1fr}
+@media(min-width:840px){.zahlen{grid-template-columns:repeat(3,1fr)}}
+.zahl b{display:block;font-family:var(--serif);font-size:clamp(3.6rem,1.4rem + 7vw,7.5rem);
+  line-height:.86;font-weight:500;color:var(--ember);letter-spacing:-.02em}
+.zahl p{margin-top:1rem;font-size:.98rem;line-height:1.55;color:#cfc8bd;max-width:30ch}
+.zahl .q{display:block;margin-top:.8rem;font-family:var(--mono);font-size:.6rem;
+  letter-spacing:.12em;color:#8b93a5}
+
+/* ── Stationen ── */
+.station{padding-block:var(--band);position:relative;overflow:hidden}
+.zwei{display:grid;grid-template-columns:1fr;gap:clamp(2rem,4.5vw,5rem)}
+@media(min-width:920px){
+  .zwei{grid-template-columns:1.05fr .95fr;align-items:start}
+  .station.gespiegelt .zwei>.rechts{order:-1}
+}
+.ziffer{position:absolute;top:calc(var(--band)*.28);right:-4vw;font-family:var(--serif);
+  font-size:clamp(8rem,24vw,22rem);line-height:.72;font-weight:500;color:transparent;
+  -webkit-text-stroke:1px rgba(185,89,31,.2);pointer-events:none;user-select:none;z-index:0}
+.dunkel .ziffer{-webkit-text-stroke-color:rgba(224,138,78,.24)}
+.station.gespiegelt .ziffer{right:auto;left:-4vw}
+.station>.spurbreit{position:relative;z-index:1}
+
+/* ── Einstiegs-Weiche ── */
+.weiche{display:flex;flex-wrap:wrap;gap:.75rem;max-width:56rem}
+.weiche button{all:unset;cursor:pointer;border:1px solid rgba(27,32,41,.18);border-radius:2rem;
+  padding:.85rem 1.35rem;font-size:var(--s0);line-height:1.4;max-width:32ch;
+  transition:border-color .3s,background .3s,transform .3s cubic-bezier(.16,1,.3,1)}
+.weiche button:nth-child(3n+1){font-size:var(--s1);font-family:var(--serif)}
+.weiche button:hover,.weiche button:focus-visible{border-color:var(--glut);background:rgba(185,89,31,.07);transform:translateY(-2px)}
+.weiche button[aria-pressed=true]{border-color:var(--glut);background:rgba(185,89,31,.13)}
+
+/* ── Die Frage ── */
+.frage{border-left:2px solid rgba(185,89,31,.38);padding:1rem 0 1rem 1.4rem;margin-top:1.8rem}
+.dunkel .frage{border-left-color:rgba(224,138,78,.45)}
+.frage>p.abfrage{font-family:var(--serif);font-size:var(--s1);line-height:1.3;margin-bottom:1.1rem}
+.wahl{display:flex;flex-wrap:wrap;gap:.45rem}
+.wahl button{all:unset;cursor:pointer;font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;
+  text-transform:uppercase;border:1px solid rgba(27,32,41,.2);border-radius:1.4rem;padding:.5rem .85rem;transition:all .26s}
+.dunkel .wahl button{border-color:rgba(247,243,236,.24)}
+.wahl button:hover,.wahl button:focus-visible{border-color:var(--teal);color:var(--teal)}
+.wahl button[aria-pressed=true]{background:var(--glut);color:var(--papier-warm);border-color:var(--glut)}
+.quittung{font-family:var(--mono);font-size:.6rem;letter-spacing:.11em;color:var(--teal);
+  margin-top:.9rem;min-height:1em;opacity:0;transition:opacity .5s;line-height:1.75}
+.dunkel .quittung{color:var(--salbei)}
+.quittung.da{opacity:1}
+.wink{font-family:var(--mono);font-size:.58rem;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--teal);margin-top:.75rem;display:block}
+
+/* ── Echo ── */
+.echo{display:grid;place-items:center;gap:2.4rem;padding-block:1.5rem}
+.echo svg{width:min(76vw,400px);height:auto;overflow:visible}
+.echo polygon{fill:rgba(185,89,31,.13);stroke:var(--glut);stroke-width:1.4;
+  transition:all 1.1s cubic-bezier(.16,1,.3,1)}
+.echo .achse{stroke:rgba(27,32,41,.14);stroke-width:1}
+.echo text{font-family:var(--mono);font-size:7.5px;letter-spacing:.1em;fill:var(--tinte-weich)}
+.erlauber{max-width:36ch;text-align:center;font-family:var(--serif);font-size:var(--s1);
+  line-height:1.42;min-height:3.4em}
+
+/* ── Die Grenze: sichtbar, nicht im Kleingedruckten ── */
+.grenze{display:grid;gap:2rem;max-width:56rem}
+.grenze .satz{font-family:var(--serif);font-size:var(--s2);line-height:1.22;font-style:italic;color:var(--ember)}
+.grenze .zwei-spalten{display:grid;gap:clamp(1.6rem,4vw,3.5rem);grid-template-columns:1fr}
+@media(min-width:800px){.grenze .zwei-spalten{grid-template-columns:1fr 1fr}}
+.grenze h3{font-family:var(--mono);font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;
+  margin-bottom:.9rem;color:#97a0b3}
+.grenze .nicht h3{color:#c98878}
+.grenze p{color:#d6cfc4;line-height:1.68}
+
+/* ── Quellen: Belegtiefe 3 — Autor, Jahr, Fundstelle ── */
+.quellen ol{list-style:none;counter-reset:q;margin-top:3rem;display:grid;gap:1.5rem;max-width:62rem}
+.quellen li{counter-increment:q;display:grid;grid-template-columns:auto 1fr;gap:1.2rem;align-items:baseline;
+  padding-bottom:1.5rem;border-bottom:1px solid rgba(27,32,41,.1)}
+.quellen li::before{content:counter(q,decimal-leading-zero);font-family:var(--mono);font-size:.7rem;color:var(--glut)}
+.quellen cite{font-style:italic;color:var(--tinte-weich)}
+.einschraenkung{margin-top:2.4rem;padding:1.2rem 1.4rem;border-left:2px solid var(--glut);
+  font-size:.95rem;color:var(--tinte-weich);max-width:58ch}
+
+/* ── Der Bogen: gleiche Mechanik wie auf der Live-Seite, eigene Gestalt ── */
+.bogen{display:grid;gap:1.1rem;grid-template-columns:1fr;margin-top:2.2rem;max-width:44rem}
+@media(min-width:620px){.bogen{grid-template-columns:1fr 1fr}.bogen .voll,.bogen .optin,
+  .bogen button,.bogen .form-stand{grid-column:1/-1}}
+.bogen-feld label{display:block;font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--tinte-weich);margin-bottom:.45rem}
+.bogen-feld .opt{opacity:.6;letter-spacing:.1em}
+.bogen-feld .pflicht{color:var(--glut)}
+.bogen input[type=text],.bogen input[type=email],.bogen textarea{
+  width:100%;font:inherit;font-size:1rem;padding:.8rem .95rem;border:1px solid rgba(27,32,41,.22);
+  border-radius:9px;background:rgba(255,255,255,.55);color:var(--tinte);resize:vertical}
+.bogen input:focus,.bogen textarea:focus{outline:2px solid var(--glut);outline-offset:1px;
+  border-color:transparent}
+.optin{display:flex;gap:.7rem;align-items:flex-start;font-size:.92rem;line-height:1.55;
+  color:var(--tinte-weich);cursor:pointer}
+.optin input{margin-top:.35rem;accent-color:var(--glut);flex:0 0 auto}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.bogen button{justify-self:start;cursor:pointer;border:1px solid var(--glut);font-family:var(--mono)}
+.bogen button[disabled]{opacity:.6;cursor:default}
+.form-stand{font-size:.95rem;line-height:1.6;color:var(--teal);opacity:0;transition:opacity .4s;min-height:1px}
+.form-stand.da{opacity:1}
+.fein{margin-top:1.4rem;font-size:.86rem;line-height:1.6;color:var(--tinte-weich);max-width:52ch}
+.fein a{color:var(--glut)}
+.fnav{display:flex;gap:1.6rem;flex-wrap:wrap;justify-content:center;margin-bottom:1.6rem}
+.fnav a{color:var(--papier);opacity:.7;text-decoration:none;font-family:var(--mono);
+  font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;transition:opacity .25s}
+.fnav a:hover{opacity:1}
+
+/* ── Person: ein Mensch schaut dich an (Epic D-E13) ── */
+.person{display:grid;gap:clamp(2rem,5vw,4.5rem);grid-template-columns:1fr;align-items:center;text-align:left}
+@media(min-width:880px){.person{grid-template-columns:.85fr 1.15fr}}
+.portraet{margin:0;position:relative}
+.portraet img{width:100%;height:auto;display:block;border-radius:3px;
+  filter:grayscale(calc(1 - var(--klarheit))) contrast(calc(.92 + .12*var(--klarheit)));
+  transition:filter 1.2s cubic-bezier(.16,1,.3,1)}
+.portraet figcaption{margin-top:.9rem}
+/* Wieder einsetzen, sobald der Restart-Film liegt (Dreh 12.09.): dieser Block plus
+   ein <div class="video-platz"> im Gespraechs-Abschnitt. 60-90 s, keine Positionierung. */
+.video-platz{margin-top:3rem;padding:1.5rem 1.6rem;border:1px dashed rgba(27,32,41,.25);border-radius:12px;
+  max-width:44ch}
+.vp-rahmen{width:100%;aspect-ratio:16/9;border-radius:6px;display:grid;place-items:center;margin-bottom:1.1rem;
+  background:linear-gradient(135deg,rgba(185,89,31,.1),rgba(31,111,107,.1))}
+.vp-rahmen span{font-size:1.7rem;color:var(--glut);opacity:.55}
+
+/* ── Abschluss + Fuss ── */
+.gespraech{padding-block:var(--band);text-align:center;display:grid;gap:1.6rem;justify-items:center}
+footer{padding-block:var(--band) 2.5rem;position:relative;z-index:2;overflow:hidden}
+.wortzeichen{font-family:var(--serif);font-size:clamp(4rem,17vw,15rem);line-height:.8;font-weight:500;
+  letter-spacing:-.02em;color:transparent;-webkit-text-stroke:1px rgba(247,243,236,.17);text-align:center}
+.fussreihen{display:flex;gap:2.2rem;flex-wrap:wrap;justify-content:center;margin-top:2.4rem}
+
+.gewinn{position:fixed;left:50%;bottom:2.2rem;translate:-50% 0;z-index:50;
+  font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;
+  background:var(--glut);color:var(--papier-warm);padding:.6rem 1.2rem;border-radius:2rem;
+  opacity:0;pointer-events:none;transition:opacity .3s,translate .45s cubic-bezier(.16,1,.3,1)}
+.gewinn.da{opacity:1;translate:-50% -.5rem}
+
+.steigt{opacity:0;transform:translateY(22px)}
+.steigt.sichtbar{opacity:1;transform:none;
+  transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+/* Eine dunkle VOLLFLAECHE darf nicht als Ganzes einblenden: bei Teil-Deckkraft mischt sich ihr
+   Grund mit dem hellen Papier darunter und blitzt grau auf (11.09. am Bildschirm gefangen).
+   Deshalb bleibt die Flaeche stehen und nur ihr Inhalt steigt. */
+.steigt.dunkel{opacity:1;transform:none}
+.steigt.dunkel>.spurbreit{opacity:0;transform:translateY(22px)}
+.steigt.dunkel.sichtbar>.spurbreit{opacity:1;transform:none;
+  transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition-duration:.01ms!important}
+  html{scroll-behavior:auto}
+  .feld{filter:blur(100px) saturate(1.05);opacity:.28;transform:none}
+  .js .weich,.js .duenn{filter:none;opacity:1}
+  .steigt{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<div class="feld" aria-hidden="true"></div>
+<div class="korn" aria-hidden="true"></div>
+
+<header class="rahmen">
+  <span class="marke">RESTART</span>
+  <div class="rahmen-schaerfe" title="Je weiter du gehst und je mehr du antwortest, desto schärfer wird diese Seite.">
+    <span class="rs-ring" aria-hidden="true"><i></i></span>
+    <span class="rs-txt"><b id="rs-zahl">0 %</b> <span>scharf</span></span>
+  </div>
+  <nav>
+    <a href="#weg">Die sieben Schritte</a>
+    <a href="#echo-block">Der Antreiber-Check</a>
+    <a href="#grenze">Was wir nicht können</a>
+    <a class="knopf-klein" href="#gespraech">Erstgespräch</a>
+  </nav>
+</header>
+
+<nav class="spur" aria-label="Dein Stand auf dem Weg" id="spur"></nav>
+
+<main id="top">
+
+  <section class="flaeche ouvertuere">
+    <div class="spurbreit">
+      <p class="mono">Begleitung im Übergang</p>
+      <h1 class="display duenn" style="margin-top:1.4rem">Klarheit kommt nicht vor dem Schritt. <em>Sie entsteht daraus.</em></h1>
+      <p class="lead weich" style="margin-top:2.4rem">Sieben Schritte für den Teil der Veränderung, den
+        niemand sieht — und ein Check zu den fünf Antreibern, die darunter arbeiten.</p>
+      <div class="hero-einstieg">
+        <p class="mono">Wo stehst du gerade? Tipp an, was am ehesten stimmt.</p>
+        <div class="hero-weiche" id="hero-weiche"></div>
+      </div>
+      <div class="knoepfe">
+        <a class="knopf primaer" href="#weg">Die sieben Schritte</a>
+        <a class="knopf sekundaer" href="#echo-block">Zuerst der Antreiber-Check</a>
+      </div>
+      <p class="erklaerung">Diese Seite ist absichtlich unscharf. <strong>Sie schärft sich, während du
+        sie gehst und die sieben Fragen beantwortest</strong> — so, wie Klarheit auch sonst entsteht.
+        <button type="button" id="probe" class="probe">Kurz ausprobieren</button></p>
+    </div>
+  </section>
+
+  <section class="flaeche station steigt" id="weiche-block">
+    <div class="spurbreit">
+      <p class="mono">Einstieg</p>
+      <h2 class="gross duenn" style="margin:1rem 0 1.6rem">Wo stehst du gerade?</h2>
+      <p class="lead weich" style="margin-bottom:2.8rem">Acht Sätze zum Wiedererkennen. Tipp den an, der
+        am ehesten stimmt — die Seite merkt sich nichts davon, sie hebt nur hervor, wo du sinnvoll einsteigst.</p>
+      <div class="weiche" id="weiche-liste"></div>
+    </div>
+  </section>
+
+  <section class="flaeche dunkel" id="weg" style="min-height:58svh;display:grid;place-items:center;text-align:center;padding-block:var(--band)">
+    <p class="mittel" style="font-style:italic;max-width:19ch;color:var(--ember)">Und dann kommt der Teil, den niemand sieht.</p>
+  </section>
+
+  <div id="stationen"></div>
+
+  <section class="flaeche dunkel station steigt" id="zahlen-block">
+    <div class="spurbreit">
+      <p class="mono">Woran wir uns halten</p>
+      <h2 class="gross duenn" style="margin:1rem 0 3.5rem;max-width:16ch">Drei Zahlen, die diese Seite ehrlich halten.</h2>
+      <div class="zahlen">
+        <div class="zahl"><b>265</b>
+          <p>MBA-Studierende an fünf Universitäten. Kurse, Vorerfahrung und Risikoneigung wirkten auf die
+            Gründungsabsicht <strong>vollständig</strong> über die Selbstwirksamkeit — nicht daneben.</p>
+          <span class="q">Zhao, Seibert &amp; Hills 2005</span></div>
+        <div class="zahl"><b>34</b>
+          <p>Menschen im Rollenübergang, über Jahre begleitet. Daraus kommt die Reihenfolge dieser Seite:
+            man handelt sich in eine Identität hinein, nicht umgekehrt.</p>
+          <span class="q">Ibarra 1999</span></div>
+        <div class="zahl"><b>d ≈ .08</b>
+          <p>Die durchschnittliche Wirkung von Mindset-Arbeit über 273 Studien. <strong>Real, aber klein</strong> —
+            am deutlichsten bei Menschen unter Druck. Deshalb versprechen wir dir keine Verwandlung.</p>
+          <span class="q">Sisk et al. 2018 · Yeager et al. 2019</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="flaeche station steigt" id="echo-block">
+    <div class="spurbreit">
+      <p class="mono">Dein Echo</p>
+      <h2 class="gross duenn" style="margin:1rem 0 1.4rem">Was sich über die sieben Antworten abzeichnet</h2>
+      <p class="lead weich" style="margin-bottom:3rem">Kein Test, kein Ergebnis, das dich einsortiert. Ein
+        <em style="font-family:var(--serif);font-style:italic;color:var(--glut)">Echo</em> — die Form zeigt,
+        welcher Antreiber gerade am lautesten mitläuft.</p>
+      <div class="echo">
+        <svg viewBox="-72 -72 144 144" role="img" aria-labelledby="echo-titel">
+          <title id="echo-titel">Form deiner fünf Antreiber</title>
+          <g class="achse" id="achsen"></g>
+          <polygon id="echo-form" points="0,0 0,0 0,0 0,0 0,0"></polygon>
+          <g id="echo-labels"></g>
+        </svg>
+        <p class="erlauber" id="erlauber">Beantworte die Fragen unterwegs — hier entsteht deine Form.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="flaeche dunkel station steigt" id="grenze">
+    <div class="spurbreit">
+      <p class="mono">Ehrlich gesagt</p>
+      <h2 class="gross duenn" style="margin:1rem 0 2.4rem;max-width:15ch">Was wir können — und was nicht.</h2>
+      <div class="grenze">
+        <p class="satz">Wer in einer Veränderung steckt, rennt oft wie im Hamsterrad und hat das Gefühl,
+          nicht ausweichen zu können.</p>
+        <div class="zwei-spalten">
+          <div class="nicht"><h3>Was wir nicht sind</h3>
+            <p>Kein Allheilmittel — schon gar nicht für strukturelle Fehlentscheidungen. Wenn eine
+              Organisation etwas falsch entschieden hat, repariert das kein Coaching. Wer dir das
+              verspricht, verkauft dir etwas.</p></div>
+          <div><h3>Was wir liefern</h3>
+            <p>Die Perspektive von außerhalb des Rades. Klarheit darüber, was die Veränderung gerade mit
+              dir macht — und welche Alternativen neben dem bestehen, was du gerade tust. Das ist weniger
+              als ein Versprechen und mehr als ein Ratschlag.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="flaeche station quellen steigt" id="quellen">
+    <div class="spurbreit">
+      <p class="mono">Woher das kommt</p>
+      <h2 class="gross duenn" style="margin:1rem 0 0;max-width:16ch">Diese Seite schuldet dir ihre Quellen.</h2>
+      <ol>
+        <li><div>Zhao, H., Seibert, S. E., &amp; Hills, G. E. (2005). The mediating role of self-efficacy in
+          the development of entrepreneurial intentions. <cite>Journal of Applied Psychology</cite>, 90(6), 1265–1272.</div></li>
+        <li><div>Ibarra, H. (1999). Provisional selves: Experimenting with image and identity in professional
+          adaptation. <cite>Administrative Science Quarterly</cite>, 44(4), 764–791.</div></li>
+        <li><div>Ibarra, H. (2015). <cite>Act Like a Leader, Think Like a Leader.</cite> Harvard Business Review Press.</div></li>
+        <li><div>Sisk, V. F., et al. (2018) und Yeager, D. S., et al. (2019). <cite>Psychological Science</cite>
+          bzw. <cite>Nature</cite>, 573, 364–369.</div></li>
+      </ol>
+      <p class="einschraenkung">Der Antreiber-Check folgt dem Modell von Taibi Kahler (Transaktionsanalyse).
+        Das ist ein Praxis-Modell, kein geprüftes Messinstrument — deshalb ist er als Echo angelegt,
+        nicht als Test.</p>
+    </div>
+  </section>
+
+  <section class="flaeche gespraech" id="gespraech">
+    <div class="spurbreit person">
+      <figure class="portraet">
+        <img src="portrait-jay.jpg" alt="Jay Manuzon" loading="lazy" width="640" height="800">
+        <figcaption class="mono">Jay Manuzon</figcaption>
+      </figure>
+      <div class="person-text">
+        <p class="mono">Wenn du willst</p>
+        <h2 class="gross duenn" style="margin:1rem 0 1.4rem;max-width:17ch">Magst du das mit jemandem durchgehen?</h2>
+        <p class="lead weich">Ein Erstgespräch, keine Verpflichtung. Du erzählst, wo du stehst —
+          ich sage dir ehrlich, ob ich der Richtige dafür bin.</p>
+        <div class="bogen" id="bogen">
+          <div class="bogen-feld">
+            <label for="af-name">Dein Name <span class="opt">optional</span></label>
+            <input type="text" id="af-name" autocomplete="name">
+          </div>
+          <div class="bogen-feld">
+            <label for="af-email">Deine E-Mail <span class="pflicht">*</span></label>
+            <input type="email" id="af-email" autocomplete="email" required>
+          </div>
+          <div class="bogen-feld voll">
+            <label for="af-msg">Was beschäftigt dich gerade am meisten? <span class="opt">optional</span></label>
+            <textarea id="af-msg" rows="3"></textarea>
+          </div>
+          <div class="bogen-feld voll">
+            <label for="af-termin">Wann erreicht man dich am besten? <span class="opt">optional</span></label>
+            <input type="text" id="af-termin" placeholder="z. B. werktags ab 17 Uhr, oder: Mittwochvormittag">
+          </div>
+          <label class="optin"><input type="checkbox" id="af-echo">
+            <span>Mein Antreiber-Echo mitsenden — nur die Punktesummen aus den sieben Fragen, keine
+            einzelnen Antworten. Ohne Häkchen bleibt dein Echo vollständig in deinem Browser.</span></label>
+          <div class="hp" aria-hidden="true">
+            <label for="af-website">Website</label>
+            <input type="text" id="af-website" tabindex="-1" autocomplete="off">
+          </div>
+          <button type="button" class="knopf primaer" id="af-senden" style="display:none">Erstgespräch anfragen</button>
+          <p class="form-stand" id="af-status" role="status"></p>
+        </div>
+        <p class="fein">Lieber direkt per Mail? Schreib an
+          <a href="mailto:jay@aivantum.com?subject=Restart%3A%20Gespr%C3%A4chs-Anfrage">jay@aivantum.com</a>
+          — das Formular braucht JavaScript, die Mail nicht.</p>
+        <p class="fein">Mit dem Absenden werden deine Angaben über unseren Formular-Endpunkt per E-Mail an
+          mich übermittelt; du bekommst eine Bestätigung an deine Adresse. Details in der
+          <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+        </div>
+    </div>
+  </section>
+
+  <footer class="dunkel">
+    <div class="wortzeichen" aria-hidden="true">RESTART</div>
+    <nav class="fnav" aria-label="Rechtliches">
+      <a href="#top">Nach oben</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="https://coachjay.de/">coachjay.de</a>
+    </nav>
+    <div class="fussreihen">
+      <span class="mono">Konzept-Entwurf · 11.09.2026</span>
+      <span class="mono">nicht veröffentlicht</span>
+      <span class="mono">Cormorant Garamond · Hanken Grotesk</span>
+    </div>
+  </footer>
+</main>
+
+<script>
+document.documentElement.classList.add('js');
+let ouvertuereLaeuft=false;
+
+const BEWEGUNGEN=[{name:'I · Ablösen',von:0,bis:3,dunkel:false},
+                  {name:'II · Gerüst',von:3,bis:6,dunkel:true},
+                  {name:'III · Abschied',von:6,bis:7,dunkel:false}];
+
+const SCHRITTE=[
+ {t:'Schreibe deine hinderlichen Glaubenssätze um',
+  l:'Was du über dich glaubst, entscheidet, was du überhaupt versuchst. Der Satz, der dich am meisten kostet, klingt selten wie eine Meinung — er klingt wie eine Tatsache.',
+  f:'Wenn etwas nicht auf Anhieb klappt — welcher Satz meldet sich zuerst?'},
+ {t:'Beschreibe deine Zukunft wie deine Gegenwart',
+  l:'Nicht als Wunsch, sondern im Präsens und in Details: Wie sieht ein Dienstag aus? Wer ruft dich an? Woran merkst du, dass es läuft?',
+  f:'Woran würdest du an einem gewöhnlichen Dienstag merken, dass es funktioniert?'},
+ {t:'Verschiebe deine Identität',
+  l:'Nicht „ich will das werden“, sondern die kleinste Handlung, die jemand tut, der es schon ist. Ibarra nennt das vorläufige Selbste: man probiert Versionen aus und behält die, die trägt.',
+  f:'Was tut jemand, der das schon ist — und was davon könntest du diese Woche tun?'},
+ {t:'Fokus statt Verzettelung',
+  l:'Am Anfang sieht jede Richtung nach einer Chance aus. Genau das ist das Problem: sieben halbe Wege fühlen sich produktiv an und kommen nirgends an.',
+  f:'Wenn du diese Woche nur EINE Sache zu Ende bringen könntest — welche wäre es?'},
+ {t:'Erstelle deinen Ressourcenplan',
+  l:'Geld, Zeit, Energie, Menschen. Nüchtern aufgeschrieben, bevor die Zahlen dich überraschen. Der unromantischste Schritt — und der, den die meisten überspringen.',
+  f:'Was von dem, was du brauchst, hast du noch nie laut ausgerechnet?'},
+ {t:'Rüste deine Sprache auf',
+  l:'Wie du antwortest, wenn jemand fragt „und was machst du jetzt?“, entscheidet über die Hälfte deiner Gespräche. Der Satz muss sitzen, bevor du ihn brauchst.',
+  f:'Was antwortest du heute auf „und was machst du jetzt?“ — und wie fühlt sich das an?'},
+ {t:'Verabschiede die alte Version von dir',
+  l:'Der Teil, den niemand sieht. Etwas geht wirklich zu Ende, und das gehört benannt — sonst schleppt man es als unerledigte Sache mit.',
+  f:'Was an der alten Rolle war wirklich gut — und wovon nimmst du bewusst Abschied?'}];
+
+const ANTREIBER=[
+ {k:'perfekt',kurz:'Sei perfekt',erlauber:'Du bist gut genug, so wie du bist.',staerke:'Sorgfalt und Qualität'},
+ {k:'schnell',kurz:'Mach schnell',erlauber:'Nimm dir die Zeit, die es braucht.',staerke:'Tempo und Entschlusskraft'},
+ {k:'anstreng',kurz:'Streng dich an',erlauber:'Es darf leicht gehen.',staerke:'Ausdauer und Ernst'},
+ {k:'recht',kurz:'Allen recht',erlauber:'Gefalle dir selbst.',staerke:'Empathie und Loyalität'},
+ {k:'stark',kurz:'Sei stark',erlauber:'Du darfst offen sein.',staerke:'Ruhe unter Druck'}];
+
+/* Acht Sätze statt sechs — das Spektrum aus Jays Regie:
+   betroffen ohne Einfluss · betroffen aber gestaltend · noch davor · geschickt worden */
+const WEICHE=[
+ ['Über meinen Kopf hinweg wurde entschieden, und ich weiß nicht, was ich jetzt machen soll.',0],
+ ['Ich habe seit dem Umbau eine Rolle, die es vorher nicht gab.',2],
+ ['Ich muss eine Veränderung mittragen, hinter der ich selbst noch nicht ganz stehe.',5],
+ ['Ich soll das jetzt meinem Team verkaufen — und finde die Worte nicht.',5],
+ ['Ich denke über eine Veränderung nach und habe noch nichts angefangen.',1],
+ ['Ich will mich selbstständig machen und weiß nicht, womit ich anfange.',0],
+ ['Ich arbeite viel und es fühlt sich trotzdem nicht nach Fortschritt an.',3],
+ ['Jemand hat mir gesagt, ich soll hier mal reinschauen.',1]];
+
+const el=(t,c,h)=>{const n=document.createElement(t);if(c)n.className=c;if(h!=null)n.innerHTML=h;return n};
+const punkte={};ANTREIBER.forEach(a=>punkte[a.k]=0);
+let beantwortet=0;
+let einstiegGewaehlt=0;   // 0 oder 1
+
+const spur=document.getElementById('spur');
+BEWEGUNGEN.forEach(b=>{
+  spur.appendChild(el('div','beweg',b.name));
+  for(let i=b.von;i<b.bis;i++){
+    const btn=el('button');btn.type='button';btn.dataset.i=i;
+    btn.setAttribute('aria-label',(i+1)+'. '+SCHRITTE[i].t);
+    btn.innerHTML='<span class="tick"></span><span class="txt">'+String(i+1).padStart(2,'0')+'</span>';
+    btn.addEventListener('click',()=>document.getElementById('s'+i).scrollIntoView({block:'start'}));
+    spur.appendChild(btn);
+  }});
+
+// Vier kurze Saetze im Hero — die volle Liste steht weiter unten.
+// [Kurzsatz, Ziel-Schritt, Index in der vollen Weiche unten]
+const HERO = [
+ ['Über meinen Kopf hinweg wurde entschieden.', 0, 0],
+ ['Neue Rolle seit dem Umbau.',                 2, 1],
+ ['Ich soll das meinem Team verkaufen.',        5, 3],
+ ['Ich denke erst darüber nach.',               1, 4],
+];
+const hw = document.getElementById('hero-weiche');
+HERO.forEach(([s, ziel, untenIdx]) => {
+  const b = el('button', null, s); b.type = 'button'; b.setAttribute('aria-pressed', 'false');
+  b.addEventListener('click', () => {
+    const schon = b.getAttribute('aria-pressed') === 'true';
+    hw.querySelectorAll('button').forEach(o => o.setAttribute('aria-pressed', 'false'));
+    const vorher = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--klarheit')) || 0;
+    if (schon) { einstiegGewaehlt = 0; }
+    else { b.setAttribute('aria-pressed', 'true'); einstiegGewaehlt = 1; }
+    schaerfen();
+    const nachher = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--klarheit')) || 0;
+    if (!schon) gewinnZeigen(Math.round((nachher - vorher) * 100));
+    // Die volle Weiche unten spiegelt die Wahl, damit beide dasselbe sagen
+    const alle = wl.querySelectorAll('button');
+    alle.forEach(o => o.setAttribute('aria-pressed', 'false'));
+    if (!schon && alle[untenIdx]) alle[untenIdx].setAttribute('aria-pressed', 'true');
+  });
+  hw.appendChild(b);
+});
+const mehr = el('button', 'mehr', 'mehr Sätze ↓'); mehr.type = 'button';
+mehr.addEventListener('click', () =>
+  document.getElementById('weiche-block').scrollIntoView({behavior:'smooth', block:'start'}));
+hw.appendChild(mehr);
+
+const wl=document.getElementById('weiche-liste');
+WEICHE.forEach(([s,ziel])=>{
+  const b=el('button',null,s);b.type='button';b.setAttribute('aria-pressed','false');
+  b.addEventListener('click',()=>{
+    wl.querySelectorAll('button').forEach(o=>o.setAttribute('aria-pressed','false'));
+    b.setAttribute('aria-pressed','true');
+    document.getElementById('s'+ziel).scrollIntoView({behavior:'smooth',block:'start'});
+  });
+  wl.appendChild(b);});
+
+const host=document.getElementById('stationen');
+SCHRITTE.forEach((s,i)=>{
+  const b=BEWEGUNGEN.find(x=>i>=x.von&&i<x.bis);
+  const sec=el('section','flaeche station steigt'+(b.dunkel?' dunkel':'')+(i%2?' gespiegelt':''));
+  sec.id='s'+i;
+  sec.innerHTML='<div class="ziffer" aria-hidden="true">'+String(i+1).padStart(2,'0')+'</div>'+
+    '<div class="spurbreit"><div class="zwei"><div>'+
+    '<p class="mono">Bewegung '+b.name+' · Schritt '+String(i+1).padStart(2,'0')+'</p>'+
+    '<h2 class="mittel duenn" style="margin:.9rem 0 1.4rem">'+s.t+'</h2>'+
+    '<p class="lead weich">'+s.l+'</p></div>'+
+    '<div class="rechts"><div class="frage"><p class="abfrage">'+s.f+'</p><div class="wahl" id="w'+i+'"></div>'+
+    '<p class="quittung" id="q'+i+'"></p>'+
+    (i===0?'<span class="wink">Jede Antwort schärft die Seite ein Stück</span>':'')+
+    '</div></div></div></div>';
+  host.appendChild(sec);
+
+  const wahl=sec.querySelector('#w'+i);
+  ANTREIBER.forEach((a,ai)=>{
+    const btn=el('button',null,a.kurz);btn.type='button';btn.setAttribute('aria-pressed','false');
+    btn.addEventListener('click',()=>{
+      const schon=btn.getAttribute('aria-pressed')==='true';
+      [...wahl.children].forEach((o,oi)=>{
+        if(o.getAttribute('aria-pressed')==='true'){punkte[ANTREIBER[oi].k]--;}
+        o.setAttribute('aria-pressed','false');});
+      const q=document.getElementById('q'+i);
+      if(schon){beantwortet=Math.max(0,beantwortet-1);q.classList.remove('da');}
+      else{btn.setAttribute('aria-pressed','true');punkte[a.k]++;beantwortet++;
+        q.textContent='Erlaubnis: '+a.erlauber+'   ·   Stärke darunter: '+a.staerke;
+        q.classList.add('da');}
+      const vorher=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--klarheit'))||0;
+      schaerfen();echoZeichnen();
+      const nachher=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--klarheit'))||0;
+      if(!schon) gewinnZeigen(Math.round((nachher-vorher)*100));});
+    wahl.appendChild(btn);});
+});
+
+function schaerfen(){
+  if(ouvertuereLaeuft) return;          // die Ouvertuere fuehrt, bis sie durch ist
+  const max=Math.max(0,document.body.scrollHeight-innerHeight);
+  const g=max>0?Math.min(1,scrollY/max):1;
+  // Drei Quellen statt zwei: Scrollen, der Einstieg im Hero, die sieben Antworten.
+  // Der Einstieg wiegt 0,22 — genug, dass EIN Klick den Titel sichtbar schaerft,
+  // waehrend man ihn noch anschaut.
+  const k=Math.min(1,g*.33+einstiegGewaehlt*.22+(beantwortet/SCHRITTE.length)*.45);
+  document.documentElement.style.setProperty('--klarheit',k.toFixed(3));
+  const proz=Math.round(k*100);
+  document.getElementById('rs-zahl').textContent=proz+' %';
+  const aktiv=Math.min(SCHRITTE.length-1,Math.floor(g*SCHRITTE.length*1.3));
+  spur.querySelectorAll('button').forEach(b=>b.style.setProperty('--an',+b.dataset.i<=aktiv?1:0));
+  // Die Spur kehrt sich um, wenn sie vor einem dunklen Kapitel steht
+  const mitte=document.elementsFromPoint(innerWidth/2,innerHeight/2)
+    .find(n=>n.classList && n.classList.contains('flaeche'));
+  document.body.classList.toggle('dunkel-nah', !!(mitte && mitte.classList.contains('dunkel')));
+}
+
+const R=52,N=ANTREIBER.length;
+const pkt=(i,r)=>{const w=Math.PI*2*i/N-Math.PI/2;return[(Math.cos(w)*r).toFixed(1),(Math.sin(w)*r).toFixed(1)]};
+(function(){const g=document.getElementById('achsen'),lab=document.getElementById('echo-labels');
+ ANTREIBER.forEach((a,i)=>{const[x,y]=pkt(i,R);
+  const ln=document.createElementNS('http://www.w3.org/2000/svg','line');
+  ln.setAttribute('x1',0);ln.setAttribute('y1',0);ln.setAttribute('x2',x);ln.setAttribute('y2',y);g.appendChild(ln);
+  const[lx,ly]=pkt(i,R+14);
+  const t=document.createElementNS('http://www.w3.org/2000/svg','text');
+  t.setAttribute('x',lx);t.setAttribute('y',ly);t.setAttribute('text-anchor','middle');
+  t.textContent=a.kurz.toUpperCase();lab.appendChild(t);});})();
+
+function echoZeichnen(){
+  const hoch=Math.max(1,...Object.values(punkte));
+  document.getElementById('echo-form').setAttribute('points',
+    ANTREIBER.map((a,i)=>pkt(i,8+(R-8)*(punkte[a.k]/hoch)).join(',')).join(' '));
+  const f=ANTREIBER.slice().sort((a,b)=>punkte[b.k]-punkte[a.k])[0];
+  document.getElementById('erlauber').textContent=beantwortet===0
+    ?'Beantworte die Fragen unterwegs — hier entsteht deine Form.'
+    :'„'+f.erlauber+'“  Was darunter arbeitet, ist keine Schwäche: '+f.staerke+'.';
+}
+echoZeichnen();
+
+const gewinn=el('div','gewinn');gewinn.setAttribute('role','status');document.body.appendChild(gewinn);
+let gewinnTimer;
+function gewinnZeigen(plus){
+  gewinn.textContent=plus>0?'Schärfe +'+plus+' %':'Antwort gespeichert';
+  gewinn.classList.add('da');
+  clearTimeout(gewinnTimer);gewinnTimer=setTimeout(()=>gewinn.classList.remove('da'),1900);
+}
+
+document.getElementById('probe').addEventListener('click',()=>{
+  const w=document.documentElement,jetzt=getComputedStyle(w).getPropertyValue('--klarheit');
+  w.style.setProperty('--klarheit','1');
+  gewinn.textContent='So sieht sie aus, wenn du durch bist';gewinn.classList.add('da');
+  clearTimeout(gewinnTimer);
+  gewinnTimer=setTimeout(()=>{gewinn.classList.remove('da');w.style.setProperty('--klarheit',jetzt);schaerfen();},2100);
+});
+
+/* ── Gespraechs-Anfrage: dieselbe Mechanik wie restart.aivantum.com
+   (Worker -> Lead-Mail an Jay + Bestaetigung an den Absender).
+   Zwei bewusste Unterschiede: `art` traegt eine eigene Kennung, damit Jay
+   im Postfach sieht, von WELCHER der beiden Restart-Seiten die Anfrage kam;
+   und das Echo sendet nur Summen, nie einzelne Antworten. ── */
+function echoSummary(){
+  return ANTREIBER.map(a => a.kurz + ': ' + (punkte[a.k] || 0)).join(' · ')
+       + '  (von ' + beantwortet + ' von ' + SCHRITTE.length + ' beantworteten Fragen)';
+}
+(function(){
+  const btn = document.getElementById('af-senden');
+  const stand = document.getElementById('af-status');
+  if(!btn || !stand) return;
+  btn.style.display = 'inline-block';           // ohne JS bleibt er unsichtbar, die Mail traegt
+  const zeige = m => { stand.textContent = m; stand.classList.add('da'); };
+  btn.addEventListener('click', () => {
+    const email = (document.getElementById('af-email').value || '').trim();
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+      zeige('Bitte prüf deine E-Mail-Adresse — an sie geht die Bestätigung.'); return;
+    }
+    btn.disabled = true; btn.textContent = 'Wird gesendet …';
+    fetch('https://aivantum-check.aivantum.workers.dev/kontakt', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({
+        art: 'restart-coachjay',
+        email: email,
+        name: document.getElementById('af-name').value.trim(),
+        msg: document.getElementById('af-msg').value.trim(),
+        termin: document.getElementById('af-termin').value.trim(),
+        echo: document.getElementById('af-echo').checked ? echoSummary() : '',
+        source: location.hostname || 'restart.coachjay.de',
+        website: document.getElementById('af-website').value
+      })
+    }).then(r => r.json().catch(() => ({})).then(d => ({ok: r.ok, d})))
+      .then(res => {
+        if(res.ok){
+          zeige('Danke! Deine Anfrage ist bei mir. Eine Bestätigung ist an ' + email +
+                ' unterwegs — ich melde mich in der Regel innerhalb von zwei Werktagen.');
+          btn.textContent = 'Anfrage gesendet ✓';
+        } else {
+          zeige('Das hat gerade nicht geklappt' +
+                (res.d && res.d.error === 'rate_limited' ? ' (zu viele Versuche — bitte in einer Stunde erneut)' : '') +
+                '. Du erreichst mich direkt per E-Mail an jay@aivantum.com.');
+          btn.disabled = false; btn.textContent = 'Erstgespräch anfragen';
+        }
+      })
+      .catch(() => {
+        zeige('Keine Verbindung zum Formular-Dienst. Du erreichst mich direkt per E-Mail an jay@aivantum.com.');
+        btn.disabled = false; btn.textContent = 'Erstgespräch anfragen';
+      });
+  });
+})();
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('sichtbar');io.unobserve(e.target)}}),{rootMargin:'-6% 0px -10%'});
+document.querySelectorAll('.steigt').forEach(n=>io.observe(n));
+
+/* ── Ouvertuere (Jay-Idee 11.09.): die Seite kommt SCHARF herein, faellt dann sichtbar
+   aus dem Fokus und schaerft sich von da an mit. Damit ist in drei Sekunden klar, dass
+   die Unschaerfe Absicht ist und kein schlechtes Rendering. Bei reduzierter Bewegung
+   entfaellt sie und die Seite bleibt scharf. */
+const magBewegung = !matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (magBewegung) {
+  ouvertuereLaeuft = true;
+  document.body.classList.add('ouvertuere-laeuft');
+  document.documentElement.style.setProperty('--klarheit', '1');
+  document.getElementById('rs-zahl').textContent = '100 %';
+  setTimeout(() => {
+    document.documentElement.style.setProperty('--klarheit', '0.06');
+    document.getElementById('rs-zahl').textContent = '6 %';
+    setTimeout(() => {
+      document.body.classList.remove('ouvertuere-laeuft');
+      ouvertuereLaeuft = false;
+      schaerfen();
+    }, 1800);
+  }, 1400);
+}
+
+let warte=false;
+addEventListener('scroll',()=>{if(warte)return;warte=true;
+  requestAnimationFrame(()=>{schaerfen();warte=false})},{passive:true});
+schaerfen();
+</script>
+</body>
+</html>
