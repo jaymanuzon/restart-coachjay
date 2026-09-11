@@ -97,6 +97,25 @@ body{background:var(--papier);color:var(--tinte);font-family:var(--sans);font-si
 .rs-txt{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;
   color:var(--tinte-weich);white-space:nowrap}
 .rs-txt b{color:var(--glut);font-weight:600}
+/* Der Regler im Rahmen (Jay 11.09.): der Weg, der IMMER funktioniert — auf dem
+   Telefon mit dem Daumen, am Rechner mit der Maus. Er setzt einen Boden, den die
+   automatischen Quellen nur noch überbieten, nie unterschreiten können. */
+#schaerfe-regler{-webkit-appearance:none;appearance:none;width:64px;height:20px;background:transparent;
+  cursor:ew-resize;margin-left:.15rem;flex:0 0 auto}
+#schaerfe-regler::-webkit-slider-runnable-track{height:3px;border-radius:2px;
+  background:linear-gradient(90deg,var(--glut) 0 var(--fuell,0%),rgba(27,32,41,.2) var(--fuell,0%) 100%)}
+#schaerfe-regler::-moz-range-track{height:3px;border-radius:2px;background:rgba(27,32,41,.2)}
+#schaerfe-regler::-moz-range-progress{height:3px;border-radius:2px;background:var(--glut)}
+#schaerfe-regler::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;border-radius:50%;
+  background:var(--glut);margin-top:-5.5px;border:2px solid var(--papier);cursor:grab}
+#schaerfe-regler::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:var(--glut);
+  border:2px solid var(--papier);cursor:grab}
+#schaerfe-regler:focus-visible{outline:2px solid var(--glut);outline-offset:3px;border-radius:4px}
+@media(max-width:420px){#schaerfe-regler{width:48px}}
+/* Hover am Rechner: wer über die Schaltflächen im Hero fährt, schärft ein Stück mit */
+@media(hover:hover){
+  .knoepfe a:hover ~ *, .hero-weiche button:hover{}
+}
 @media(max-width:560px){.rs-txt span{display:none}}
 .rahmen nav{display:flex;gap:1.4rem;margin-left:auto;align-items:center}
 .rahmen nav a{color:var(--tinte);opacity:.7;text-decoration:none;font-size:var(--s-1);transition:opacity .25s}
@@ -181,6 +200,36 @@ body{background:var(--papier);color:var(--tinte);font-family:var(--sans);font-si
   border-color:var(--glut);background:rgba(185,89,31,.08);transform:translateY(-2px)}
 .hero-weiche button[aria-pressed=true]{border-color:var(--glut);background:rgba(185,89,31,.15)}
 .hero-weiche .mehr{border-style:dashed;opacity:.7}
+
+/* ── Der Schärfer: auf dem Telefon gibt es kein Hover und keine Maus.
+   Jay 11.09. am iPhone: „das Unscharfe sieht sehr geil aus, aber man versteht nicht,
+   wie man das scharf kriegt." Also steht der Schalter direkt unter der Überschrift —
+   vor dem Fließtext, vor den Knöpfen, im ersten Bildschirm. Man tippt auf das,
+   was unscharf ist. ── */
+.schaerfer{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:.7rem;
+  opacity:0;pointer-events:none;translate:0 6px;
+  transition:opacity .7s cubic-bezier(.16,1,.3,1),translate .7s cubic-bezier(.16,1,.3,1),
+             background .3s,border-color .3s,transform .3s cubic-bezier(.16,1,.3,1);
+  margin-top:2rem;padding:.85rem 1.3rem;border:1px solid var(--glut);border-radius:2rem;
+  background:rgba(185,89,31,.07);transition:background .3s,border-color .3s,transform .3s cubic-bezier(.16,1,.3,1);
+  min-height:48px}                                   /* 48px = verlaessliche Tippgroesse */
+.schaerfer.da{opacity:1;pointer-events:auto;translate:0 0}
+.schaerfer.weg{opacity:0;pointer-events:none;translate:0 -6px}
+.schaerfer:hover,.schaerfer:focus-visible{background:rgba(185,89,31,.14);transform:translateY(-2px)}
+.schaerfer:active{transform:translateY(0) scale(.98)}
+.sch-punkt{width:11px;height:11px;border-radius:50%;background:var(--glut);flex:0 0 auto;
+  box-shadow:0 0 0 0 rgba(185,89,31,.55);animation:pochen 2.4s ease-out infinite}
+@keyframes pochen{70%{box-shadow:0 0 0 13px rgba(185,89,31,0)}100%{box-shadow:0 0 0 0 rgba(185,89,31,0)}}
+.sch-text{font-family:var(--mono);font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--glut)}
+.schaerfer[data-fertig="1"] .sch-punkt{animation:none;background:var(--teal)}
+.schaerfer[data-fertig="1"]{border-color:rgba(31,111,107,.5);background:transparent}
+.schaerfer[data-fertig="1"] .sch-text{color:var(--teal)}
+@media(max-width:760px){
+  .ouvertuere{padding-block:12vh var(--band)}        /* 24vh fressen auf dem Telefon den Bildschirm */
+  .hero-einstieg{margin-top:1.8rem}
+  .erklaerung{margin-top:2rem}
+}
 
 /* ── Zahlen 2: wenige, gross, als Objekte ── */
 .zahlen{display:grid;gap:clamp(2.4rem,5vw,4.5rem);grid-template-columns:1fr}
@@ -344,9 +393,11 @@ footer{padding-block:var(--band) 2.5rem;position:relative;z-index:2;overflow:hid
 
 <header class="rahmen">
   <span class="marke">RESTART</span>
-  <div class="rahmen-schaerfe" title="Je weiter du gehst und je mehr du antwortest, desto schärfer wird diese Seite.">
+  <div class="rahmen-schaerfe" title="Die Seite schärft sich von selbst — hier kannst du nachhelfen.">
     <span class="rs-ring" aria-hidden="true"><i></i></span>
     <span class="rs-txt"><b id="rs-zahl">0 %</b> <span>scharf</span></span>
+    <input type="range" id="schaerfe-regler" min="0" max="100" step="1" value="0"
+           aria-label="Schärfe der Seite" title="Ziehen, um die Seite zu schärfen">
   </div>
   <nav>
     <a href="#weg">Die sieben Schritte</a>
@@ -364,7 +415,11 @@ footer{padding-block:var(--band) 2.5rem;position:relative;z-index:2;overflow:hid
     <div class="spurbreit">
       <p class="mono">Begleitung im Übergang</p>
       <h1 class="display duenn" style="margin-top:1.4rem">Klarheit kommt nicht vor dem Schritt. <em>Sie entsteht daraus.</em></h1>
-      <p class="lead weich" style="margin-top:2.4rem">Sieben Schritte für den Teil der Veränderung, den
+      <button type="button" class="schaerfer" id="schaerfer">
+        <span class="sch-punkt" aria-hidden="true"></span>
+        <span class="sch-text" id="sch-text">Tippen löst die Unschärfe auf</span>
+      </button>
+      <p class="lead weich" style="margin-top:1.8rem">Sieben Schritte für den Teil der Veränderung, den
         niemand sieht — und ein Check zu den fünf Antreibern, die darunter arbeiten.</p>
       <div class="hero-einstieg">
         <p class="mono">Wo stehst du gerade? Tipp an, was am ehesten stimmt.</p>
@@ -594,6 +649,11 @@ const el=(t,c,h)=>{const n=document.createElement(t);if(c)n.className=c;if(h!=nu
 const punkte={};ANTREIBER.forEach(a=>punkte[a.k]=0);
 let beantwortet=0;
 let einstiegGewaehlt=0;   // 0 oder 1
+let tipps=0;              // 0..3, der Schaerfer-Schalter
+let zeit=0;               // 0..1, laeuft nach der Ouvertuere von selbst hoch
+let manuell=0;            // 0..1, vom Regler gesetzter BODEN
+let hover=0;              // 0..1, nur am Rechner, voruebergehend
+let ziehtGerade=false;
 
 const spur=document.getElementById('spur');
 BEWEGUNGEN.forEach(b=>{
@@ -614,6 +674,40 @@ const HERO = [
  ['Ich soll das meinem Team verkaufen.',        5, 3],
  ['Ich denke erst darüber nach.',               1, 4],
 ];
+/* ── Der dezente Hinweis (Jay 11.09.): Er fordert nichts von jemandem, der von
+   selbst loslegt. Er erscheint erst, wenn nach der Ouvertüre zwei Sekunden lang
+   NICHTS passiert — und verschwindet beim ersten Handgriff wieder. ── */
+let hatGehandelt = false;
+function handlungGesehen(){
+  if(hatGehandelt) return;
+  hatGehandelt = true;
+  const s = document.getElementById('schaerfer');
+  if(s.classList.contains('da')) { s.classList.remove('da'); s.classList.add('weg'); }
+}
+function hinweisErwaegen(){
+  setTimeout(() => {
+    if(hatGehandelt || scrollY > 120) return;
+    document.getElementById('schaerfer').classList.add('da');
+  }, 2000);
+}
+['pointerdown','wheel','touchmove','keydown'].forEach(e =>
+  addEventListener(e, handlungGesehen, {passive:true, once:true}));
+
+(function(){
+  const s = document.getElementById('schaerfer'), txt = document.getElementById('sch-text');
+  const stufen = ['Tippen löst die Unschärfe auf', 'Schärfer', 'Noch schärfer', 'Und jetzt lies weiter'];
+  s.addEventListener('click', () => {
+    if (tipps >= 3) { document.getElementById('weiche-block').scrollIntoView({behavior:'smooth'}); return; }
+    const vorher = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--klarheit')) || 0;
+    tipps++;
+    schaerfen();
+    const nachher = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--klarheit')) || 0;
+    gewinnZeigen(Math.round((nachher - vorher) * 100));
+    txt.textContent = stufen[tipps];
+    if (tipps >= 3) s.dataset.fertig = '1';
+  });
+})();
+
 const hw = document.getElementById('hero-weiche');
 HERO.forEach(([s, ziel, untenIdx]) => {
   const b = el('button', null, s); b.type = 'button'; b.setAttribute('aria-pressed', 'false');
@@ -691,10 +785,21 @@ function schaerfen(){
   // Drei Quellen statt zwei: Scrollen, der Einstieg im Hero, die sieben Antworten.
   // Der Einstieg wiegt 0,22 — genug, dass EIN Klick den Titel sichtbar schaerft,
   // waehrend man ihn noch anschaut.
-  const k=Math.min(1,g*.33+einstiegGewaehlt*.22+(beantwortet/SCHRITTE.length)*.45);
+  // Vier Quellen. Das Scrollen wirkt am Anfang staerker (Wurzel statt linear),
+  // damit der erste Daumenwisch schon sichtbar etwas tut.
+  // Vier Quellen, und ZEIT ist die wichtigste (Jay 11.09. am iPhone: „wenn man einfach
+  // drauf geht und rumscrollt, dann sieht man nie den Titel"). Auf dem Telefon scrollt
+  // man am Titel vorbei — die Wirkung darf also nicht vom Scrollen abhängen. Sie läuft
+  // von selbst, WÄHREND man noch oben steht. Der Rest kommt aus dem Mitmachen.
+  const automatisch = Math.min(1, zeit*.42 + Math.pow(g,.65)*.08 + tipps*.10
+                      + einstiegGewaehlt*.12 + (beantwortet/SCHRITTE.length)*.42);
+  // Der Regler ist ein BODEN, kein Schalter: er kann nur nach oben helfen.
+  const k = Math.min(1, Math.max(automatisch, manuell) + hover);
   document.documentElement.style.setProperty('--klarheit',k.toFixed(3));
   const proz=Math.round(k*100);
   document.getElementById('rs-zahl').textContent=proz+' %';
+  const r=document.getElementById('schaerfe-regler');
+  if(r && !ziehtGerade){ r.value=proz; r.style.setProperty('--fuell', proz+'%'); }
   const aktiv=Math.min(SCHRITTE.length-1,Math.floor(g*SCHRITTE.length*1.3));
   spur.querySelectorAll('button').forEach(b=>b.style.setProperty('--an',+b.dataset.i<=aktiv?1:0));
   // Die Spur kehrt sich um, wenn sie vor einem dunklen Kapitel steht
@@ -804,6 +909,7 @@ document.querySelectorAll('.steigt').forEach(n=>io.observe(n));
    die Unschaerfe Absicht ist und kein schlechtes Rendering. Bei reduzierter Bewegung
    entfaellt sie und die Seite bleibt scharf. */
 const magBewegung = !matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (!magBewegung) { zeit = 1; hatGehandelt = true; }
 if (magBewegung) {
   ouvertuereLaeuft = true;
   document.body.classList.add('ouvertuere-laeuft');
@@ -816,9 +922,55 @@ if (magBewegung) {
       document.body.classList.remove('ouvertuere-laeuft');
       ouvertuereLaeuft = false;
       schaerfen();
+      zeitlaufStarten();
+      hinweisErwaegen();
     }, 1800);
   }, 1400);
 }
+
+/* ── Der Zeitlauf: 15 Sekunden von unscharf zu deutlich klarer, ohne dass jemand
+   etwas tun muss. Er haelt an, sobald geantwortet wird — dann fuehrt das Mitmachen.
+   Bei reduzierter Bewegung entfaellt er, die Seite ist dann sofort scharf. ── */
+let zeitTimer = null;
+function zeitlaufStarten(){
+  if(!magBewegung || zeitTimer) return;
+  const schritte = 56, dauer = 7000;   // 7 s: kurz genug, um es beim Lesen der Überschrift zu bemerken
+  let n = 0;
+  zeitTimer = setInterval(() => {
+    n++;
+    zeit = Math.min(1, n/schritte);
+    schaerfen();
+    if(n >= schritte){ clearInterval(zeitTimer); zeitTimer = null;
+      const txt = document.getElementById('sch-text');
+      const s = document.getElementById('schaerfer');
+      if(txt && !s.dataset.fertig){ txt.textContent = 'Beantworte die Fragen — dann wird sie ganz scharf'; }
+    }
+  }, dauer/schritte);
+}
+
+/* ── Regler + Hover: zwei Wege, die sofort wirken ── */
+(function(){
+  const r = document.getElementById('schaerfe-regler');
+  const setzen = () => {
+    manuell = (+r.value)/100;
+    r.style.setProperty('--fuell', r.value + '%');
+    handlungGesehen();
+    schaerfen();
+  };
+  ['pointerdown','touchstart'].forEach(e => r.addEventListener(e, () => { ziehtGerade = true; }, {passive:true}));
+  ['pointerup','touchend','blur'].forEach(e => r.addEventListener(e, () => { ziehtGerade = false; }));
+  r.addEventListener('input', setzen);
+  r.addEventListener('change', () => { ziehtGerade = false; setzen(); });
+
+  // Am Rechner: über eine Schaltfläche fahren schärft voruebergehend mit.
+  if (matchMedia('(hover:hover)').matches) {
+    const ziele = document.querySelectorAll('.knoepfe a, .hero-weiche button, .schaerfer');
+    ziele.forEach(z => {
+      z.addEventListener('mouseenter', () => { hover = .14; schaerfen(); });
+      z.addEventListener('mouseleave', () => { hover = 0;   schaerfen(); });
+    });
+  }
+})();
 
 let warte=false;
 addEventListener('scroll',()=>{if(warte)return;warte=true;
